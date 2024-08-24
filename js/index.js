@@ -31,7 +31,7 @@ const dataload = async () => {
                     <div>5</div>min
                    </div>
                    <div>
-                    <button id="btnc">Click</button>
+                    <button onclick="onClickbyBtn()" id="btnc">Click</button>
                    </div>
                 </div>
             </div>
@@ -40,25 +40,32 @@ const dataload = async () => {
         contain.appendChild(create)
     // console.log(i)
 }
-document.addEventListener('click',function(){
+}
+
+document.getElementById('btn').addEventListener('click',function(){
+    const input = document.getElementById('inputFiled')
+    console.log(input.value)
+})
+
+function onClickbyBtn(){
     const data = document.getElementById('keepData')
     const re = document.getElementById('btnc')
-    const description =re.parentNode.parentNode.parentNode.childNodes[3].textContent
-    const view =re.parentNode.parentNode.childNodes[1].childNodes[3].textContent
+    const description = re.parentNode.parentNode.parentNode.childNodes[3].textContent
+    const view = re.parentNode.parentNode.childNodes[1].childNodes[3].textContent
     const div = document.createElement('div')
     const p = document.createElement('p')
     p.innerText = description;
     const p1 = document.createElement('p')
-    p1.innerText=view
-    div.style.display='flex'
-    div.style.gap='20px'
+    p1.innerText = view
+    div.style.display = 'flex'
+    div.style.gap = '20px'
     div.appendChild(p)
     div.appendChild(p1)
     data.appendChild(div)
-})
-
-
 }
+
+ 
+
  
 
 
